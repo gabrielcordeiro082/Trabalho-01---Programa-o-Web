@@ -8,7 +8,6 @@ public class Genero {
     private String nome;
     private String descricao;
 
-    @OneToMany(mappedBy = "genero")
     private List<Filme> filmes;
 
     public Genero() {

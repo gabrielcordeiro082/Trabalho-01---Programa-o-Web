@@ -12,12 +12,6 @@ public class Filme {
     private String data;
     private String sinopse;
 
-    @OneToMany
-    private Ator ator;
-
-    @ManyToOne
-    private Genero genero;
-
     public Filme() {
 
     }
