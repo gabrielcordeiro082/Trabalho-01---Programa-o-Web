@@ -19,11 +19,7 @@ public class FilmeResources {
     @Autowired
     private FilmeRepository filmeRepository;
 
-    @GetMapping(value = "/{id}")
-    public ResponseEntity<Filme> buscarPorId(@PathVariable ("id") Long id){
-        return filmeRepository.findAllById(id).map(filme ->
-                ResponseEntity.ok(filme)).orElse(ResponseEntity.notFound().build());
-    }
+
 
     @GetMapping(value = "/filmes")
     public List<Filme> listarTodas() {
@@ -36,16 +32,23 @@ public class FilmeResources {
         filmeRepository.save(filme);
 
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
-                .buildAndExpand(filme.getIdNoticia()).toUri();
+                .buildAndExpand(filme.getIdFilme()).toUri();
 
         return ResponseEntity.created(uri).build();
     }
 
     @PutMapping
-    public void alterar(@RequestBody Ator ator){ filmeRepository.save(ator); }
+    public void alterar(@RequestBody Filme filme){ filmeRepository.save(filme); }
 
     @DeleteMapping
-    public void deletar(@RequestBody Ator ator){
-        filmeRepository.delete(ator);
+    public void deletar(@RequestBody Filme filme){
+        filmeRepository.delete(filme);
     }
+
+    @GetMapping(value ="/{id}")
+    public ResponseEntity<Filme> buscarPorId(@PathVariable("id") Long id) {
+        return filmeRepository.findById(id).map(filme ->
+                ResponseEntity.ok(filme)).orElse(ResponseEntity.notFound().build());
+    }
+
 }

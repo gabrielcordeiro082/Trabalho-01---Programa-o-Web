@@ -9,17 +9,17 @@ public class Filme {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idFilme;
     private String titulo;
-    private String data;
+    private String datalan;
     private String sinopse;
 
     public Filme() {
 
     }
 
-    public Filme(Long idFilme, String titulo, String data, String sinopse) {
+    public Filme(Long idFilme, String titulo, String datalan, String sinopse) {
         this.idFilme = idFilme;
         this.titulo = titulo;
-        this.data = data;
+        this.datalan = datalan;
         this.sinopse = sinopse;
     }
 
@@ -39,12 +39,12 @@ public class Filme {
         this.titulo = titulo;
     }
 
-    public String getData() {
-        return data;
+    public String getDatalan() {
+        return datalan;
     }
 
-    public void setData(String data) {
-        this.data = data;
+    public void setDatalan(String datalan) {
+        this.datalan = datalan;
     }
 
     public String getSinopse() {
@@ -53,21 +53,5 @@ public class Filme {
 
     public void setSinopse(String sinopse) {
         this.sinopse = sinopse;
-    }
-
-    public Ator getAtor() {
-        return ator;
-    }
-
-    public void setAtor(Ator ator) {
-        this.ator = ator;
-    }
-
-    public Genero getGenero() {
-        return genero;
-    }
-
-    public void setGenero(Genero genero) {
-        this.genero = genero;
     }
 }

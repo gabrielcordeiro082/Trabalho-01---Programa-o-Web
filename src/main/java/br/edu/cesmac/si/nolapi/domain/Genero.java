@@ -1,17 +1,19 @@
 package br.edu.cesmac.si.nolapi.domain;
 
+import javax.persistence.*;
+import java.util.List;
+
 @Entity
 public class Genero {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idGenero;
     private String nome;
     private String descricao;
 
-    private List<Filme> filmes;
 
     public Genero() {
-
     }
 
     public Genero(Long idGenero, String nome, String descricao) {
@@ -42,13 +44,5 @@ public class Genero {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
-    }
-
-    public List<Filme> getFilmes() {
-        return filmes;
-    }
-
-    public void setFilmes(List<Filme> filmes) {
-        this.filmes = filmes;
     }
 }

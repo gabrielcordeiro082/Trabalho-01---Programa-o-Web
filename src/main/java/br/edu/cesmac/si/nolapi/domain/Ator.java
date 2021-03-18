@@ -10,17 +10,19 @@ public class Ator {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idAtor;
     private String nome;
-    private String email;
+    private String datanasc;
+    private String sexo;
     private String biografia;
 
     public Ator(){
 
     }
 
-    public Ator(Long idAtor, String nome, String email, String biografia){
+    public Ator(Long idAtor, String nome, String datanasc, String sexo,String biografia){
         this.idAtor = idAtor;
         this.nome = nome;
-        this.email = email;
+        this.datanasc = datanasc;
+        this.sexo = sexo;
         this.biografia = biografia;
     }
 
@@ -40,12 +42,20 @@ public class Ator {
         this.nome = nome;
     }
 
-    public String getEmail() {
-        return email;
+    public String getDatanasc() {
+        return datanasc;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setDatanasc(String datanasc) {
+        this.datanasc = datanasc;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
     }
 
     public String getBiografia() {

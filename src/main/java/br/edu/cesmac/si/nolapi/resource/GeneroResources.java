@@ -44,7 +44,7 @@ public class GeneroResources {
     }
 
     @GetMapping(value ="/{id}")
-    public ResponseEntity<Ator> buscarPorId(@PathVariable("id") Long id) {
+    public ResponseEntity<Genero> buscarPorId(@PathVariable("id") Long id) {
         return generoRepository.findById(id).map(genero ->
                 ResponseEntity.ok(genero)).orElse(ResponseEntity.notFound().build());
     }
