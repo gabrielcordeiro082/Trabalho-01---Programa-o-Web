@@ -19,13 +19,10 @@ public class FilmeResources {
     @Autowired
     private FilmeRepository filmeRepository;
 
-
-
     @GetMapping(value = "/filmes")
     public List<Filme> listarTodas() {
         return filmeRepository.findAll();
     }
-
 
     @PostMapping
     public ResponseEntity<Void> salvar(@RequestBody Filme filme) {
